@@ -1,0 +1,38 @@
+<!doctype html>
+<hmtl>
+	<head>
+		<title>
+			HighLow
+		</title>
+		<script lang="javascript">
+			var rnd = 0;
+			function numberButtonClick(){
+				rnd = Math.floor(Math.random()*100);
+			}
+			function guessButtonClick(){
+				var inputCtrl = document.getElementById("theGuess");
+				var newGuess = inputCtrl.value;
+				console.log(newGuess);
+				var spanCtrl = document.getElementById("theMessage");
+				if (newGuess == rnd){
+					spanCtrl.textContent = "Your guess, " + newGuess +", correct!";
+				}
+				if (newGuess > rnd){
+					spanCtrl.textContent = "Your guess, " + newGuess +", was too high, please guess again!";
+				}
+				if(newGuess < rnd){
+					spanCtrl.textContent = "Your guess, " + newGuess +", was too low, please guess again!";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id="theTitle">
+			Let's play a guessing game!
+			<button onclick="numberButtonClick()">Create a random number!</button>
+		</p>
+		<input id="theGuess" type="text" placeholder="Enter your guess" name="">		
+		<button onclick="guessButtonClick()">Guess the number!</button>
+		<span id="theMessage">No message yet!</span>
+	</body>
+</hmtl>

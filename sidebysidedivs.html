@@ -8,9 +8,19 @@
 		h1{
 			border-bottom: 1px solid black;
 		}
-		div {
+		#blue {
 		background-color: #0000FF;
 		min-height: 50px;
+		}
+		/*Allows us to reduce the width by 50%, and treat the items in this class as line items*/
+		.half{
+		width: 49%;
+		display: inline-block;
+		min-height:100px;
+		border: 1px solid silver;
+		}
+		.column{
+			text-align: center;
 		}
 		</style>
 	</head>
@@ -18,6 +28,36 @@
 		<h1>
 			Make blue the national color
 		</h1>
-		<div></div>
+		<!-- This div will contain the blue color -->
+		<div id="blue"></div>
+		<!-- These divs will be side by side, using the "half" class -->
+		<div class="half">
+			<div class="column">
+				<span>
+					Pro
+				</span>
+			</div>
+			<span>
+				<ul>
+					<li>Because I said so
+					<li>Why not?
+					<li>Blue is a relatively calming color, it will help to invoke feelings of peace
+				</ul>
+			</span>
+		</div>
+		<div class="half">
+			<div class="column">
+				<span>
+					Con
+				</span>
+			</div>
+			<span>
+				<ul>
+					<li>"Because I said so" is a terrible reason
+					<li>Why not Zoidberg?
+					<li>When dealing with a symbol of national pride, peace is not always the emotion you want
+				</ul>
+			</span>
+		</div>
 	</body>
 </hmtl>

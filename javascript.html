@@ -1,0 +1,46 @@
+<!doctype html>
+<hmtl>
+	<head>
+		<title>
+			Javascript
+		</title>
+		<!-- Normally, anything in this script would happen 1st, as javascript does not compile.  This would be -->
+		<!-- a problem if we did not use the "onload" below, as would be no reference to the id, "theline," until -->
+		<!-- javascript gets down to that point. -->
+		<script lang="javascript">
+			function buttonClick(){
+				var inputCtrl = document.getElementById("thename");
+				var newName = inputCtrl.value;
+				console.log(newName);
+				var spanCtrl = document.getElementById("theMessage");
+				spanCtrl.textContent = "Hello, " + newName + "!";
+
+				var checkCtrl = document.getElementById("theCheck");
+				if(checkCtrl.checked){
+					console.log("checked!");
+				}else{
+					console.log("not checked...");
+				}
+			}
+			function bodyLoad() {
+				var pCtrl = document.getElementById("theline");
+				var txt = pCtrl.textContent;
+				pCtrl.textContent += " -Greg";
+				console.log(txt);
+			}
+			
+		</script>
+	</head>
+	<body onload="bodyLoad()">
+		<p id="theline">
+			Here is some text to mess with.
+		</p>
+		<input id="thename" type="text" placeholder="Enter your name" name="">
+		<button onclick="buttonClick()">Click me!</button>
+		<span id="theMessage">No message yet!</span>
+
+		<p>
+			<input id="theCheck" type="checkbox" name=""> I am totally not a robot set on destroying us all!<br>
+		</p>
+	</body>
+</hmtl>
