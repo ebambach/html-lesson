@@ -12,15 +12,18 @@
 		<button onclick="Roll()">Roll!</button><br>
 		<br>
 
+		<input id="NumberRollsValue"readonly type="text" value="0"> <span>Number of rolls</span><br>
+		<br>
+
 		<span>Check the boxes for the dice you want to keep after a roll.</span><br>
-		<input id="Roll1Value"readonly type="text" value="0"> <input id="keepRoll1" type="checkbox">1<br>
+		<input id="Roll1Value"readonly type="text" value="0"> <input id="keepRoll1" onchange="AddOnes()" type="checkbox">1<br>
 		<input id="Roll2Value"readonly type="text" value="0"> <input id="keepRoll2" type="checkbox">2<br>
 		<input id="Roll3Value"readonly type="text" value="0"> <input id="keepRoll3" type="checkbox">3<br>
 		<input id="Roll4Value"readonly type="text" value="0"> <input id="keepRoll4" type="checkbox">4<br>
 		<input id="Roll5Value"readonly type="text" value="0"> <input id="keepRoll5" type="checkbox">5<br>
 		<br>
 
-		<span>When you are done rolling, click the box for where you would like your score to go.</span><br>
+		<span>Click the box for where you would like your score to go.</span><br>
 		<input id="OnesValue"readonly type="text" value="0"> <input id="keepOnes" type="checkbox">Ones<br>
 		<input id="TwosValue"readonly type="text" value="0"> <input id="keepTwos" type="checkbox">Twos<br>
 		<input id="ThreesValue"readonly type="text" value="0"> <input id="keepThrees" type="checkbox">Threes<br>
@@ -46,9 +49,9 @@
 		<input id="LowerValue"readonly type="text" value="0"> <span>Lower Total</span><br>
 		<input id="UpperBonusValue"readonly type="text" value="0"> <span>Upper Total</span><br>
 		<input id="GrandValue"readonly type="text" value="0"> <span>Grand Total</span><br>
-		
-		
-		
+		<br>
+
+		<button onclick="NewGame()">Start a new game!</button><br>		
 		
 		
 	</body>
