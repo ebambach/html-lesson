@@ -4,6 +4,8 @@
 		<title>
 			ListStudents
 		</title>
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript">
+		</script>
 		<script src="C:\repos\html-lesson\js\ListStudents.js" type="text/javascript">
 		</script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -14,6 +16,12 @@
 	</head>
 	<body>
 		<h1>List of Students</h1>
+		<p><button id="add" class="btn btn-success">Add a student.</button>
+			<input id ="FirstName" type="text" name="">
+			<input id ="LastName" type="text" name="">
+			<input id ="SAT" type="text" name="">
+			<input id ="GPA" type="text" name="">
+		</p>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -33,7 +41,7 @@
 				</tbody>
 			</table>
 			<p>
-				<button onclick="getStudents()">Get all students.</button>
+				<button id="getStudents" class="btn btn-success">Get all students.</button> <!-- onclick="getStudents() -->
 			</p>
 	</body>
 </hmtl>
