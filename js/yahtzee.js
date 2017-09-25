@@ -389,8 +389,13 @@
 				alert("You must enter a score before continuing.");
 			}
 
+			//For the TallyUpper(), TallyLower(), and TallyGrand(), we use "reduce" to call an anoymous function
+			//that returns a single value for the numbers in the array.  It does this by adding the current value
+			//in the array to the previous one in the array (think +=).
 			function TallyUpper(){
-				Sum = UpperScore.reduce;
+				Sum = UpperScore.reduce(function(previous, current) {
+    				return previous + currennt;
+				});
 
 				//UpperBoolean is used to check if the UpperScore array should have the 35 bonus points
 				//pushed to it.  We only want this to be able to happen once, otherwise, with the current
@@ -413,7 +418,9 @@
 
 			function TallyLower(){
 				Sum = 0;
-				Sum = LowerScore.reduce;
+				Sum = LowerScore.reduce(function(prev, curr) {
+    				return prev + curr;
+				});
 
 				if (Sum > -1){
 					boxCtrl = document.getElementById("LowerValue");
@@ -422,7 +429,13 @@
 			}
 
 			function TallyGrand(){
-				Sum = (UpperScore.reduce) + (LowerScore.reduce);
+				Sum = (UpperScore.reduce(function(prev, curr) {
+    					return prev + curr;
+						})) 
+					+ (LowerScore.reduce(function(prev, curr) {
+    					return prev + curr;
+						}));
+
 				if (Sum > 0){
 					boxCtrl = document.getElementById("GrandValue");
 					boxCtrl.value = Sum;
