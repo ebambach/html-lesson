@@ -28,7 +28,8 @@
 			var UpperBoolean = true;
 			//Booleans used to make it user for LowerCheck() to know what it is trying to add points to.
 			var FullBoolean = false;
-			var KindBoolean = false;
+			var ThreeKindBoolean = false;
+			var FourKindBoolean = false;
 			var SmStraightBoolean = false;
 			var LgStraightBoolean = false;	
 			var YahtzeeBoolean = false;
@@ -115,7 +116,7 @@
 				checkCtrl = document.getElementById("keepThreeKind");
 				boxCtrl = document.getElementById("ThreeKindValue");
 				NumberCheck = 9;
-				KindBoolean == true;
+				ThreeKindBoolean = true;
 
 				LowerCheck();
 			}
@@ -124,7 +125,7 @@
 				checkCtrl = document.getElementById("keepFourKind");
 				boxCtrl = document.getElementById("FourKindValue");
 				NumberCheck = 16;
-				KindBoolean = true;
+				FourKindBoolean = true;
 
 				LowerCheck();
 			}
@@ -200,7 +201,7 @@
 					//which it will be if the user clicked on the button for Full House (important to
 					//do so because the same dice that qualify as a Full House can also be used as
 					//a Three of a kind).
-					if ((Matches == NumberCheck) && (YahtzeeBoolean == false) && (FullBoolean == true)){
+					if ((Matches == NumberCheck) && (YahtzeeBoolean == false) && (FullBoolean == true) && (ThreeKindBoolean == false) && (FourKindBoolean == false)){
 						Sum = 25;
 					}else if ((LgStraightBoolean == true) || (SmStraightBoolean == true)){
 						//If the user clicked the Small Straight button, we want to be able to
@@ -232,7 +233,7 @@
 					
 					//If it is a Three or Four of a kind, add the numbers in Rolls[] to get the
 					//Sum.  If it is a Yahtzee, the Sum is 50 points.
-					}else if (Matches >= NumberCheck && (YahtzeeBoolean == false) && KindBoolean == true){
+					}else if (Matches >= NumberCheck && (YahtzeeBoolean == false) && (ThreeKindBoolean == true) || (FourKindBoolean == true)){
 						Sum = Rolls[0] + Rolls[1] + Rolls[2] + Rolls[3] + Rolls[4];						
 					}else if ((Matches == 25) && (YahtzeeBoolean == true)){
 						Sum = 50;
@@ -327,7 +328,8 @@
 
 				RollBoolean = false;
 				FullBoolean = false;
-				KindBoolean == false;
+				ThreeKindBoolean == false;
+				FourKindBoolean == false;
 				SmStraightBoolean = false;
 			    LgStraightBoolean = false;
 			    YahtzeeBoolean = false;				
