@@ -12,43 +12,43 @@
 		<button onclick="Roll()">Roll!</button><br>
 		<br>
 
-		<input id="NumberRollsValue"readonly type="text" value="0"> <span>Number of rolls</span><br>
+		<input id="NumberRollsValue"readonly type="number" value="0"> <span>Number of rolls</span><br>
 		<br>
 
 		<span>Check the boxes for the dice you want to keep after a roll.</span><br>
-		<input id="Roll1Value"readonly type="text" value="-1"> <input id="keepRoll1" type="checkbox">1<br>
-		<input id="Roll2Value"readonly type="text" value="-1"> <input id="keepRoll2" type="checkbox">2<br>
-		<input id="Roll3Value"readonly type="text" value="-1"> <input id="keepRoll3" type="checkbox">3<br>
-		<input id="Roll4Value"readonly type="text" value="-1"> <input id="keepRoll4" type="checkbox">4<br>
-		<input id="Roll5Value"readonly type="text" value="-1"> <input id="keepRoll5" type="checkbox">5<br>
+		<input id="Roll1Value"readonly type="number" value="-1"> <input id="keepRoll1" type="checkbox">1<br>
+		<input id="Roll2Value"readonly type="number" value="-2"> <input id="keepRoll2" type="checkbox">2<br>
+		<input id="Roll3Value"readonly type="number" value="-3"> <input id="keepRoll3" type="checkbox">3<br>
+		<input id="Roll4Value"readonly type="number" value="-4"> <input id="keepRoll4" type="checkbox">4<br>
+		<input id="Roll5Value"readonly type="number" value="-5"> <input id="keepRoll5" type="checkbox">5<br>
 		<br>
 
-		<span>Click the box for where you would like your score to go.</span><br>
-		<input id="OnesValue"readonly type="text" value="-1"> <input id="keepOnes" onchange="AddOnes()" type="checkbox">Ones<br>
-		<input id="TwosValue"readonly type="text" value="-1"> <input id="keepTwos" onchange="AddTwos()" type="checkbox">Twos<br>
-		<input id="ThreesValue"readonly type="text" value="-1"> <input id="keepThrees" onchange="AddThrees()" type="checkbox">Threes<br>
-		<input id="FoursValue"readonly type="text" value="-1"> <input id="keepFours"  onchange="AddFours()"type="checkbox">Fours<br>
-		<input id="FivesValue"readonly type="text" value="-1"> <input id="keepFives" onchange="AddFives()" type="checkbox">Fives<br>
-		<input id="SixesValue"readonly type="text" value="-1"> <input id="keepSixes" onchange="AddSixes()" type="checkbox">Sixes<br>
+		<span>Click the button for where you would like your score to go.</span><br>
+		<input id="OnesValue"readonly type="number" value="-1"> <button id="keepOnes" onclick="AddOnes()">Ones</button><br>
+		<input id="TwosValue"readonly type="number" value="-1"> <button id="keepTwos" onclick="AddTwos()"">Twos</button><br>
+		<input id="ThreesValue"readonly type="number" value="-1"> <button id="keepThrees" onclick="AddThrees()">Threes</button><br>
+		<input id="FoursValue"readonly type="number" value="-1"> <button id="keepFours"  onclick="AddFours()">Fours</button><br>
+		<input id="FivesValue"readonly type="number" value="-1"> <button id="keepFives" onclick="AddFives()">Fives</button><br>
+		<input id="SixesValue"readonly type="number" value="-1"> <button id="keepSixes" onclick="AddSixes()">Sixes</button><br>
 		<br>
 
-		<input id="UpperValue"readonly type="text" value="0"> <span>Upper Total</span><br>
-		<input id="BonusValue"readonly type="text" value="0"> <span>Bonus</span><br>
-		<input id="UpperBonusValue"readonly type="text" value="0"> <span>Upper Total</span><br>
+		<input id="UpperValue"readonly type="number" value="0"> <span>Upper Total</span><br>
+		<input id="BonusValue"readonly type="number" value="0"> <span>Bonus</span><br>
+		<input id="UpperBonusValue"readonly type="number" value="0"> <span>Upper Total</span><br>
 		<br>
 
-		<input id="ThreeKindValue"readonly type="text" value="-1"> <input id="keepThreeKind" type="checkbox">3 of a kind<br>
-		<input id="FourKindValue"readonly type="text" value="-1"> <input id="keepFourKind" type="checkbox">4 of a kind<br>
-		<input id="FullHouseValue"readonly type="text" value="-1"> <input id="keepFullHouse" type="checkbox">Full House<br>
-		<input id="SmStraightValue"readonly type="text" value="-1"> <input id="keepSmStraight" type="checkbox">Small Straight<br>
-		<input id="LgStraightValue"readonly type="text" value="-1"> <input id="keepLgStraight" type="checkbox">Large Straight<br>
-		<input id="YahtzeeValue"readonly type="text" value="-1"> <input id="keepYahtzee" type="checkbox">YAHTZEE!<br>
-		<input id="ChanceValue"readonly type="text" value="-1"> <input id="keepChance" type="checkbox">Chance<br>
+		<input id="ThreeKindValue"readonly type="number" value="-1"> <button id="keepThreeKind" onclick="AddThreeKind()">3 of a kind</button><br>
+		<input id="FourKindValue"readonly type="number" value="-1"> <button id="keepFourKind" onclick="AddFourKind()">4 of a kind</button><br>
+		<input id="FullHouseValue"readonly type="number" value="-1"> <button id="keepFullHouse" onclick="AddFullHouse()">Full House</button><br>
+		<input id="SmStraightValue"readonly type="number" value="-1"> <button id="keepSmStraight" onclick="AddSmStraight()">Small Straight</button><br>
+		<input id="LgStraightValue"readonly type="number" value="-1"> <button id="keepLgStraight" onclick="AddLgStraight()">Large Straight</button><br>
+		<input id="YahtzeeValue"readonly type="number" value="-1"> <button id="keepYahtzee" onclick="AddYahtzee()">YAHTZEE!</button><br>
+		<input id="ChanceValue"readonly type="number" value="-1"> <button id="keepChance" onclick="AddChance()">Chance</button><br>
 		<br>
 
-		<input id="LowerValue"readonly type="text" value="0"> <span>Lower Total</span><br>
-		<input id="UpperBonusValue"readonly type="text" value="0"> <span>Upper Total</span><br>
-		<input id="GrandValue"readonly type="text" value="0"> <span>Grand Total</span><br>
+		<input id="LowerValue"readonly type="number" value="0"> <span>Lower Total</span><br>
+		<input id="UpperBonusValue"readonly type="number" value="0"> <span>Upper Total</span><br>
+		<input id="GrandValue"readonly type="number" value="0"> <span>Grand Total</span><br>
 		<br>
 
 		<button onclick="NewGame()">Start a new game!</button><br>		
