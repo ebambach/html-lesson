@@ -1,9 +1,9 @@
 			//Array for the five dice roll values
 			var Rolls = new Array (0, 0, 0, 0, 0);
 			//Array for running upper score
-			var UpperScore = [];
+			var UpperScore = [0];
 			//Array for running lower score
-			var LowerScore = [];
+			var LowerScore = [0];
 			//Stores the current number of rolls, can be 0-3
 			var NumberRolls = 0;
 			//High score for multiple games
@@ -200,7 +200,7 @@
 					//which it will be if the user clicked on the button for Full House (important to
 					//do so because the same dice that qualify as a Full House can also be used as
 					//a Three of a kind).
-					if ((Matches == NumberCheck) && (Matches != 25) && (FullBoolean == true)){
+					if ((Matches == NumberCheck) && (YahtzeeBoolean == false) && (FullBoolean == true)){
 						Sum = 25;
 					}else if ((LgStraightBoolean == true) || (SmStraightBoolean == true)){
 						//If the user clicked the Small Straight button, we want to be able to
@@ -232,7 +232,7 @@
 					
 					//If it is a Three or Four of a kind, add the numbers in Rolls[] to get the
 					//Sum.  If it is a Yahtzee, the Sum is 50 points.
-					}else if (Matches >= NumberCheck && Matches != 25 && KindBoolean == true){
+					}else if (Matches >= NumberCheck && (YahtzeeBoolean == false) && KindBoolean == true){
 						Sum = Rolls[0] + Rolls[1] + Rolls[2] + Rolls[3] + Rolls[4];						
 					}else if ((Matches == 25) && (YahtzeeBoolean == true)){
 						Sum = 50;
@@ -288,7 +288,7 @@
 
 				boxCtrl = document.getElementById("LowerValue");
 				boxCtrl.value = 0;
-				boxCtrl = document.getElementById("UpperBonusValue");
+				boxCtrl = document.getElementById("UpperFinalValue");
 				boxCtrl.value = 0;
 				boxCtrl = document.getElementById("GrandValue");
 				boxCtrl.value = 0;
@@ -394,8 +394,11 @@
 			//in the array to the previous one in the array (think +=).
 			function TallyUpper(){
 				Sum = UpperScore.reduce(function(previous, current) {
-    				return previous + currennt;
+    				return previous + current;
 				});
+
+				boxCtrl = document.getElementById("UpperValue");
+				boxCtrl.value = Sum;
 
 				//UpperBoolean is used to check if the UpperScore array should have the 35 bonus points
 				//pushed to it.  We only want this to be able to happen once, otherwise, with the current
@@ -404,22 +407,26 @@
 				if (Sum >= 63 && UpperBoolean == true){
 					boxCtrl = document.getElementById("BonusValue");
 					boxCtrl.value = 35;
+					Sum += 35;
 					boxCtrl = document.getElementById("UpperBonusValue");
-					boxCtrl.value = (Sum + 35);
+					boxCtrl.value = Sum;
 					UpperScore.push(35);
 					UpperBoolean = false;
-				}else{
+				}else{					
 					boxCtrl = document.getElementById("BonusValue");
 					boxCtrl.value = 0;
 					boxCtrl = document.getElementById("UpperBonusValue");
 					boxCtrl.value = Sum;
 				}
+
+				boxCtrl = document.getElementById("UpperFinalValue");
+				boxCtrl.value = Sum;
 			}
 
 			function TallyLower(){
 				Sum = 0;
-				Sum = LowerScore.reduce(function(prev, curr) {
-    				return prev + curr;
+				Sum = LowerScore.reduce(function(previous, current) {
+    				return previous + current;
 				});
 
 				if (Sum > -1){
@@ -429,11 +436,11 @@
 			}
 
 			function TallyGrand(){
-				Sum = (UpperScore.reduce(function(prev, curr) {
-    					return prev + curr;
+				Sum = (UpperScore.reduce(function(previous, current) {
+    					return previous + current;
 						})) 
-					+ (LowerScore.reduce(function(prev, curr) {
-    					return prev + curr;
+					+ (LowerScore.reduce(function(previous, current) {
+    					return previous + current;
 						}));
 
 				if (Sum > 0){
